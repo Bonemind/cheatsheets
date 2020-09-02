@@ -1,0 +1,4 @@
+% ssh, shell, networking
+
+# Open an ssh tunnel to a remote host via a jumpbox/bastion
+ssh -N -L <local_port>:<target_host>:<target_port> <jumphost>
