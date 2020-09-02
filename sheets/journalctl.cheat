@@ -1,0 +1,9 @@
+% journalctl, systemctl, sysadmin, logs
+
+# View logs for a systemd unit
+journalctl -u <unit_name>
+
+# View logs for a systemd unit and follow
+journalctl -fu <unit_name>
+
+$ unit_name: systemctl list-units --plain --no-legend --no-pager --type=service | awk '{print $1}'
