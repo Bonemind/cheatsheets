@@ -1,0 +1,13 @@
+% ansible, devops
+
+# run an ansible playbook with a hosts file
+ansible-playbook -i <hosts_file> <playbook_file>
+
+# init an ansible role
+ansible-galaxy init <role_name>
+
+# install roles from a roles file with galaxy
+ansible-galaxy install -r <requirements_file>
+
+$ requirements_file: ls | grep "yaml\|yml"
+$ playbook_file: ls | grep "yaml\|yml"

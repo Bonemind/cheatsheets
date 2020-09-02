@@ -1,0 +1,7 @@
+% awscli, aws
+
+# Get caller identity
+aws sts get-caller-identity
+
+# Add EKS kubernetes cluster to kubectl config
+aws eks update-kubeconfig --name <cluster_name> --profile=<profile_name> --region=<region>

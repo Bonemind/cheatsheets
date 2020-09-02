@@ -1,0 +1,15 @@
+% helm, kubernetes
+
+# Package a helm chart
+helm package <chart_location>
+
+# Render a helm chart and show the output
+helm template --debug --dry-run --generate-name <chart_location>
+
+# Render a helm chart and show the output, passing in a values.yaml
+helm template --debug --dry-run --generate-name <chart_location> -f <values_yaml>
+
+# show all helm installs in all namespaces for current kube context
+helm list -aA
+
+$ values_yaml: ls | grep "values.yml\|yaml"

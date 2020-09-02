@@ -1,0 +1,42 @@
+% terraform, tf, devops, iaac
+
+# Initialize a terraform project
+terraform init
+
+# Validate terraform in current directory
+terraform validate
+
+# Show plan for current terraform directory
+terraform plan
+
+# apply terraform changes
+terraform apply
+
+# autoconfirm terraform changes
+terraform apply -auto-approve
+
+# taint a terraform resource, forcing terraform to recreate it
+terraform taint <resource>
+
+# output terraform values as json file
+terraform output -json | jq "map_values(.value)"
+
+# pull the current terraform state and show json
+terraform state pull
+
+# push new terraform state (dangerous)
+terraform state push <state_file>
+
+# create a new terraform workspace
+terraform workspace new <new_workspace_name>
+
+# switch to a workspace
+terraform workspace select <workspace_name>
+
+# destroy a workspace (dangerous)
+terraform workspace destroy
+
+# show terraform workspaces
+terraform workspace list
+
+$ workspace_name: terraform workspace list | cut -c 3-
