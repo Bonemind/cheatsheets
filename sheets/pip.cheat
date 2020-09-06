@@ -1,0 +1,7 @@
+% python, pip
+
+# install package
+pip install <package>
+
+# update package
+pip install -U <package>
