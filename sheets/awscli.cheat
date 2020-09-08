@@ -5,3 +5,6 @@ aws sts get-caller-identity
 
 # Add EKS kubernetes cluster to kubectl config
 aws eks update-kubeconfig --name <cluster_name> --profile=<profile_name> --region=<region>
+
+# Start ssm session
+aws ssm start-session --target <instance_id> --profile <profile_name> --region <region>

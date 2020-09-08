@@ -1,0 +1,10 @@
+% sed, file editing
+
+# Substitute a string by another
+sed "s/<to_replace>/<replace_with>/g" <file>
+
+# Substitute a string in a file in place
+sed -i "s/<to_replace>/<replace_with>/g" <file>
+
+# Delete lines matching pattern in file in place
+sed -i "/<pattern/d" <file>

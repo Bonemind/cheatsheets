@@ -1,0 +1,13 @@
+% rename, renameutils, qmv
+
+# Rename a list of files from your editor
+qmv -f do
+
+# Rename a list of files including hidden ones in editor
+qmv -f do -A
+
+# Copy files from list in editor
+qcp
+
+# Copy files from list in editor including hidden
+qcp -A
