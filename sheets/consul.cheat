@@ -1,0 +1,21 @@
+% hashicorp, consul
+
+# list consul members
+consul members
+
+# list consul tokens
+consul acl token list
+
+# Create a consul policy from a file
+consul acl policy create -name "<name>" -description "<description>" -rules @<file_location>
+
+# Create a token for a policy
+consul acl token create -description "<description>" -policy-name "<policy_name>"
+
+# List consul policies
+consul acl policy list
+
+# Stream consul logs
+consul monitor
+
+$ policy_name: consul acl policy list -format=json | jq  -r .[].Name

@@ -1,0 +1,19 @@
+% hashicorp, nomad
+
+# list running nomad jobs
+nomad job status
+
+# run a new nomad job or update existing one
+nomad job run <job_file>
+
+# plan the result of a job file
+nomad job plan <job_file>
+
+# stop a nomad job
+nomad job stop <job_name>
+
+# stream nomad logs
+nomad monitor
+
+# get the status of a nomad job
+# nomad job status <job_name>

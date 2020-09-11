@@ -1,0 +1,4 @@
+% git
+
+# list tags of repository
+git tag --list

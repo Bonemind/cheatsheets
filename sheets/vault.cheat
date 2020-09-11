@@ -1,0 +1,7 @@
+% hashicorp, vault
+
+# Get a generic secret value from a path
+vault kv get <path>
+
+# Get a generic secret value from a path in json format
+vault kv get --format=json <path>
