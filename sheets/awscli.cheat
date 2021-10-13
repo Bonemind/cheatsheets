@@ -8,3 +8,9 @@ aws eks update-kubeconfig --name <cluster_name> --profile=<profile_name> --regio
 
 # Start ssm session
 aws ssm start-session --target <instance_id> --profile <profile_name> --region <region>
+
+# Get credentials to assume a role
+ aws sts assume-role --role-arn <role_arn> --role-session-name <session_name>
+
+ # List route53 hosted zones
+ aws route53 list-hosted-zones
