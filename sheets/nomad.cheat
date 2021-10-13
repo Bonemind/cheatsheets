@@ -13,7 +13,17 @@ nomad job plan <job_file>
 nomad job stop <job_name>
 
 # stream nomad logs
-nomad monitor
+nomad monitor:w
+
+# view job logs
+nomad alloc logs <allocation_id>
+
 
 # get the status of a nomad job
-# nomad job status <job_name>
+nomad job status <job_name>
+
+# Create a consul policy from a file
+nomad acl policy apply "<policy_name>"  <policy_file>
+
+# Create a token for a policy
+nomad acl token create -name <token_name> -policy <policy_file>
