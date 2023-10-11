@@ -13,7 +13,7 @@ nomad job plan <job_file>
 nomad job stop <job_name>
 
 # stream nomad logs
-nomad monitor:w
+nomad monitor
 
 # view job logs
 nomad alloc logs <allocation_id>

@@ -1,0 +1,32 @@
+% asdf, cli
+
+; Plugin management
+# list available/installed plugins
+asdf plugin list
+
+# list all available plugins the asdf plugins repo
+asdf plugin list all
+
+# add/install a plugin from the asdf plugins repo
+asdf plugin-add <plugin>
+
+# add/install a plugin from a git repo directly
+asdf plugin-add <plugin> <repo>
+
+; Version management
+# list available installed versions of a plugin's tool
+asdf list <plugin>
+
+# set a plugin's global version
+asdf global <plugin> <version>
+
+# install a version of a plugin's tool/language
+asdf install <plugin> <version>
+
+# set a local version for a plugin
+asdf local <plugin> <version>
+
+# reshim/reload the environment
+asdf reshim
+
+

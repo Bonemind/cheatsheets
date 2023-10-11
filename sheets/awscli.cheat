@@ -1,16 +1,101 @@
 % awscli, aws
 
+; STS
 # Get caller identity
 aws sts get-caller-identity
-
-# Add EKS kubernetes cluster to kubectl config
-aws eks update-kubeconfig --name <cluster_name> --profile=<profile_name> --region=<region>
-
-# Start ssm session
-aws ssm start-session --target <instance_id> --profile <profile_name> --region <region>
 
 # Get credentials to assume a role
  aws sts assume-role --role-arn <role_arn> --role-session-name <session_name>
 
- # List route53 hosted zones
- aws route53 list-hosted-zones
+# Get credentials to assume a role with an external id
+ aws sts assume-role --role-arn <role_arn> --role-session-name <session_name> --external-id <external_id>
+
+; EKS
+# Add EKS kubernetes cluster to kubectl config
+aws eks update-kubeconfig --name <cluster_name> --profile=<profile_name> --region=<region>
+
+; SSM
+# Start ssm session
+aws ssm start-session --target <instance_id> --profile <profile_name> --region <region>
+
+; Route53
+# List route53 hosted zones
+aws route53 list-hosted-zones
+
+; IAM
+# List roles
+aws iam list-roles
+
+# List policies
+aws iam list-policies
+
+# Get policy by name
+aws iam list-policies --query 'Policies[?PolicyName==`<policy_name>`]'
+
+# Get policy name containing something
+aws iam list-policies --query 'Policies[?contains(`<policy_name>`)]'
+
+# Get role info by name
+aws iam get-role --role-name <role_name>
+
+# Get role tags
+aws iam list-role-tags --role-name <role_name>
+
+; Kinesis
+# Put a kinesis record to a stream
+aws kinesis put-record --stream-name <stream_name> --data '<data>' --partition-key <partition_key>
+
+; Cloudformation
+# Describe/list cloudformation stacks
+aws cloudformation describe-stacks
+
+# Delete cloudformation stack
+aws cloudformation delete-stack --stack-name <stack_name>
+
+; Config
+# List config recorders
+aws configservice describe-configuration-recorders
+
+# list config rules
+aws configservice describe-config-rules
+
+# Get results by config rule from config aggregator
+aws configservice get-aggregate-compliance-details-by-config-rule --config-rule-name <config_rule_name> --configuration-aggregator-name <aggregator_name> --account-id <account_id> --aws-region <region>
+
+# Get config events for a resource
+aws configservice get-resource-config-history --resource-type <resource_type> --resource-id <resource_id> --limit <max_events>
+
+# Describe/show config rule status
+aws configservice describe-config-rule-evaluation-status --config-rule-names <config_rule_name>
+
+# List/show discovered resources of a certain type
+aws configservice list-discovered-resources --resource-type <resource_type>
+
+; EC2
+# List ec2 instances
+aws ec2 describe-instances --max-items <max_items>
+
+# Describe specific ec2 instance
+aws ec2 describe-instances --instance-ids <ec2_instance_id>
+
+# Describe/list vpcs
+aws ec2 describe-vpcs
+
+; Secretsmanager
+# List secrets
+aws secretsmanager list-secrets
+
+# Get/read Secret data
+aws secretsmanager get-secret-value --secret-id <secret_id>
+
+; Lambda
+# List lambda versions
+aws lambda list-versions-by-function --function-name <function_name>
+
+; RDS
+# Describe/list RDS clusters
+aws rds describe-db-clusters
+
+# Describe/list RDS clusters
+aws rds describe-db-instances
+
