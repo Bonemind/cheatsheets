@@ -96,6 +96,6 @@ aws lambda list-versions-by-function --function-name <function_name>
 # Describe/list RDS clusters
 aws rds describe-db-clusters
 
-# Describe/list RDS clusters
+# Describe/list RDS instances
 aws rds describe-db-instances
 
